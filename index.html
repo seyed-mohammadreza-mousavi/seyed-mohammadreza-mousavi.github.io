@@ -97,6 +97,17 @@
       font-size: 0.9rem;
       color: var(--footer-color);
     }
+	nav ul li a.active {
+	background-color: #ffffff; /* Light theme */
+	color: #003366;
+	padding: 0.3rem 0.7rem;
+	border-radius: 5px;
+	}
+	
+	body.dark-mode nav ul li a.active {
+	background-color: #66ccff; /* Dark theme highlight */
+	color: #000000;
+	}
   </style>
   <script>
     function toggleTheme() {
