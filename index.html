@@ -15,7 +15,6 @@
       --footer-bg: #f0f0f0;
       --footer-color: #555;
     }
-
     body.dark-mode {
       --bg-color: #121212;
       --text-color: #f5f5f5;
@@ -25,7 +24,6 @@
       --footer-bg: #1a1a1a;
       --footer-color: #999;
     }
-
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -34,18 +32,15 @@
       padding: 0;
       transition: background 0.3s, color 0.3s;
     }
-
     header {
       background-color: var(--header-bg);
       padding: 1.5rem;
       text-align: center;
     }
-
     header h1 {
       color: white;
       margin-bottom: 0.5rem;
     }
-
     nav ul {
       display: flex;
       justify-content: center;
@@ -54,21 +49,17 @@
       padding: 0;
       margin: 1rem 0 0 0;
     }
-
     nav ul li a {
       color: var(--nav-link-color);
       text-decoration: none;
       font-weight: bold;
     }
-
     nav ul li a:hover {
       text-decoration: underline;
     }
-
     .toggle-btn {
       margin-top: 1rem;
     }
-
     .toggle-btn button {
       padding: 0.4rem 1rem;
       border: 1px solid var(--text-color);
@@ -78,12 +69,27 @@
       cursor: pointer;
       border-radius: 4px;
     }
-
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
     main {
       padding: 2rem;
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
-
+    section {
+      margin-bottom: 2rem;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      color: var(--link-color);
+      text-decoration: none;
+    }
     footer {
       background-color: var(--footer-bg);
       text-align: center;
@@ -104,10 +110,9 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="research.html">Research</a></li>
+        <li><a href="research.html">Research Highlights</a></li>
         <li><a href="publications.html">Publications</a></li>
-        <li><a href="cv.html">CV</a></li>
+        <li><a href="assets/cv.pdf" download>CV</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -115,15 +120,39 @@
       <button onclick="toggleTheme()">🌙 Toggle Dark/Light Mode</button>
     </div>
   </header>
-
   <main>
+    <img src="assets/profile.jpg" alt="Profile picture" class="profile-img">
     <section>
-      <h2>Welcome</h2>
-      <p>This is the professional academic homepage of <strong>Seyed Mohammadreza Mousavi</strong>.</p>
-      <p>Explore my research, publications, and academic work using the navigation above.</p>
+      <h2>Biography</h2>
+      <p>I am Seyed Mohammadreza Mousavi, a researcher in Computer Vision and Machine Learning with interests in segmentation, representation learning, and vision-language models. My academic background spans engineering and applied AI.</p>
+    </section>
+    <section>
+      <h2>Research Interests</h2>
+      <ul style="text-align: left; display: inline-block;">
+        <li>Computer Vision</li>
+        <li>Deep Learning</li>
+        <li>Image Segmentation</li>
+        <li>Vision & Language</li>
+        <li>Representation Learning</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <ul style="text-align: left; display: inline-block;">
+        <li><strong>M.Sc.</strong> in Computer Engineering – [Your University Name]</li>
+        <li><strong>B.Sc.</strong> in Computer Science – [Your University Name]</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Connect</h2>
+      <div class="social-links">
+        <a href="mailto:your.email@example.com">📧 Email</a>
+        <a href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">🔗 LinkedIn</a>
+        <a href="https://twitter.com/yourusername" target="_blank">🐦 Twitter</a>
+      </div>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2025 Seyed Mohammadreza Mousavi</p>
   </footer>
