@@ -95,17 +95,17 @@
       cursor: pointer;
       border-radius: 4px;
     }
-	nav ul li a.active {
-	background-color: #ffffff; /* Light theme */
-	color: #003366;
-	padding: 0.3rem 0.7rem;
-	border-radius: 5px;
-	}
+nav ul li a.active {
+  background-color: #ffffff; /* Light mode active */
+  color: #003366;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+}
 
-	body.dark-mode nav ul li a.active {
-	background-color: #66ccff; /* Dark theme highlight */
-	color: #000000;
-	}
+body.dark-mode nav ul li a.active {
+  background-color: #66ccff; /* Dark mode active */
+  color: #000000;
+}
   </style>
   <script>
     function toggleTheme() {
@@ -137,7 +137,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research Highlights</a></li>
+        <li><a href="research.html" class="active">Research Highlights</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="assets/cv.pdf" download>CV</a></li>
       </ul>
