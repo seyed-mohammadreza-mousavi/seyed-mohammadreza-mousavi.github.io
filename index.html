@@ -5,178 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seyed Mohammadreza Mousavi</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    :root {
-      --main-color: #1a1a1a;
-      --accent-color: #007acc;
-      --bg-color: #ffffff;
-      --text-color: #333333;
-      --section-gap: 4rem;
-      --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-stack);
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .dark-mode {
-      --bg-color: #111;
-      --text-color: #ddd;
-      --main-color: #eee;
-      --accent-color: #66ccff;
-    }
-
-    header {
-      background: var(--main-color);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0 0 0.5rem;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .theme-toggle {
-      margin-top: 1rem;
-    }
-
-    .theme-toggle button {
-      background: none;
-      border: 2px solid white;
-      color: white;
-      padding: 0.4rem 1rem;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    section {
-      margin-bottom: var(--section-gap);
-    }
-
-    h2 {
-      color: var(--main-color);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .profile-pic {
-      max-width: 150px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      background: #f0f0f0;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .dark-mode footer {
-      background: #1a1a1a;
-      color: #888;
-    }
-  </style>
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
 </head>
 <body>
   <header>
-    <img src="assets/profile.jpg" alt="Profile picture" class="profile-pic" />
-    <h1>Seyed Mohammadreza Mousavi</h1>
-    <p>Researcher in Computer Vision & AI</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
+      <h1>Seyed Mohammadreza Mousavi</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-    <div class="theme-toggle">
-      <button onclick="toggleTheme()">Toggle Dark/Light Mode</button>
-    </div>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am a researcher passionate about computer vision, deep learning, and AI applications in imaging. My work focuses on understanding visual data through intelligent algorithms and applied machine learning.</p>
-    </section>
-
-    <section id="research">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Computer Vision</li>
-        <li>Image Segmentation</li>
-        <li>Deep Learning</li>
-        <li>Medical Imaging</li>
-        <li>Machine Learning</li>
-      </ul>
-    </section>
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <p>View full list on <a href="https://scholar.google.com" target="_blank">Google Scholar</a>.</p>
-      <ul>
-        <li><strong>Paper Title One</strong> – Conference Name, Year</li>
-        <li><strong>Paper Title Two</strong> – Journal Name, Year</li>
-      </ul>
-    </section>
-
-    <section id="cv">
-      <h2>Curriculum Vitae</h2>
-      <p>You can download my CV <a href="assets/cv.pdf" target="_blank">here</a>.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>GitHub: <a href="https://github.com/seyed-mohammadreza-mousavi" target="_blank">@seyed-mohammadreza-mousavi</a></p>
-      <p>LinkedIn: <a href="#">Your LinkedIn URL</a></p>
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <p>This is the professional academic homepage of <strong>Seyed Mohammadreza Mousavi</strong>.</p>
+      <p>Explore my research, publications, and academic work using the navigation above.</p>
     </section>
   </main>
 
