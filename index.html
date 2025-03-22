@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seyed Mohammadreza Mousavi</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     :root {
       --main-color: #1a1a1a;
@@ -14,16 +15,19 @@
       --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: var(--font-stack);
-      color: var(--text-color);
       background-color: var(--bg-color);
-      line-height: 1.6;
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      --bg-color: #111;
+      --text-color: #ddd;
+      --main-color: #eee;
+      --accent-color: #66ccff;
     }
 
     header {
@@ -54,7 +58,21 @@
       text-decoration: underline;
     }
 
-    main {
+    .theme-toggle {
+      margin-top: 1rem;
+    }
+
+    .theme-toggle button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .container {
       max-width: 960px;
       margin: auto;
       padding: 2rem;
@@ -66,7 +84,6 @@
 
     h2 {
       color: var(--main-color);
-      margin-bottom: 1rem;
     }
 
     ul {
@@ -82,6 +99,12 @@
       text-decoration: underline;
     }
 
+    .profile-pic {
+      max-width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
     footer {
       text-align: center;
       background: #f0f0f0;
@@ -89,10 +112,21 @@
       font-size: 0.9rem;
       color: #555;
     }
+
+    .dark-mode footer {
+      background: #1a1a1a;
+      color: #888;
+    }
   </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </head>
 <body>
   <header>
+    <img src="assets/profile.jpg" alt="Profile picture" class="profile-pic" />
     <h1>Seyed Mohammadreza Mousavi</h1>
     <p>Researcher in Computer Vision & AI</p>
     <nav>
@@ -102,9 +136,12 @@
       <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <section id="about">
       <h2>About Me</h2>
       <p>I am a researcher passionate about computer vision, deep learning, and AI applications in imaging. My work focuses on understanding visual data through intelligent algorithms and applied machine learning.</p>
