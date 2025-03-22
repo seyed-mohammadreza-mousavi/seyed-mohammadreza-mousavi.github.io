@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Honors & Awards – Seyed Mohammadreza Mousavi</title>
+  <title>Certificates – Seyed Mohammadreza Mousavi</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     :root {
@@ -25,11 +25,11 @@
       --footer-color: #999;
     }
     body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
       transition: background 0.3s, color 0.3s;
     }
     header {
@@ -64,12 +64,31 @@
       color: #000000;
     }
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
-    ul {
-      line-height: 1.8;
+    .certificate-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .certificate-text {
+      flex: 1 1 45%;
+    }
+    .certificate-images {
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .certificate-images img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
     footer {
       background-color: var(--footer-bg);
@@ -112,10 +131,9 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html">Research Highlights</a></li>
         <li><a href="publications.html">Publications</a></li>
-        <li><a href="honors.html" class="active">Honors & Awards</a></li>
-		<li><a href="certificate.html">Certificates</a></li>
+        <li><a href="honors.html">Honors & Awards</a></li>
+        <li><a href="certificates.html" class="active">Certificates</a></li>
         <li><a href="assets/cv.pdf" download>CV</a></li>
-		
       </ul>
     </nav>
     <div class="toggle-btn">
@@ -124,31 +142,24 @@
   </header>
 
   <main>
-    <h2>Honors & Awards</h2>
-    <ul>
-      <li>🥇 <strong>Ranked First</strong> in B.Sc. class, Islamic Azad University of Mashhad (2016)</li>
-      <li>🏅 <strong>Ranked Second</strong> among top 5% of M.Sc. class, Sadjad University of Technology (2020)</li>
-      <li>📘 M.Sc. Thesis scored <strong>18.5/20</strong> – English Handwritten Recognition using Deep Neural Networks</li>
-      <li>🎖️ Recognized for outstanding contribution to <strong>Camera Calibration and SLAM Software Systems</strong> at Software Motion (2024)</li>
-    </ul>
-<section style="display: flex; flex-wrap: wrap; margin-top: 3rem; gap: 2rem;">
-  <!-- LEFT: Description -->
-  <div style="flex: 1; min-width: 300px;">
-    <h3>🏅 Top Lecturer Award – Computer Science Department</h3>
-    <p><strong>Institution:</strong> Sadjad Industrial University</p>
-    <p><strong>Date:</strong> March 2025</p>
-    <p>
-      Received the <strong>Excellence in Teaching and Research Award</strong> for my contributions in teaching, research, and 
-      mentorship in the Computer Science and IT Department. This recognition celebrates my commitment to advancing 
-      academic excellence in <em>AI, machine learning, and computer vision</em>.
-    </p>
-  </div>
+    <h2>Certificates</h2>
 
-  <!-- RIGHT: Certificate Image -->
-  <div style="flex: 1; min-width: 300px;">
-    <img src="assets/award-certificate.png" alt="Top Lecturer Award Certificate" style="max-width: 100%; border-radius: 8px; border: 1px solid #ccc;" />
-  </div>
-</section>
+    <div class="certificate-block">
+      <div class="certificate-text">
+        <h3>IEEE Certificate – 12th Iranian Conference on Renewable Energies and Distributed Generation</h3>
+        <p>
+          Presented at the 12th Iranian Conference on Renewable Energies and Distributed Generation at Qom University of Technology (Feb 2025), our paper on <em>Lithium Battery SOH Estimation using a Hybrid Octave and LSTM Network</em> was officially accepted. The presentation was honored with an IEEE-recognized certificate. The event was a great platform to share insights on battery health estimation and deep learning-based energy applications.
+        </p>
+      </div>
+      <div class="certificate-images">
+        <img src="assets/ieee-cert.png" alt="IEEE Conference Certificate">
+        <img src="assets/presentation1.jpg" alt="Presentation Photo 1">
+        <img src="assets/presentation2.jpg" alt="Presentation Photo 2">
+      </div>
+    </div>
+
+    <!-- Add more certificates similarly -->
+
   </main>
 
   <footer>
