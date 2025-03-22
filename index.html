@@ -3,30 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SeyedMohammadreza Mousavi</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Seyed Mohammadreza Mousavi</title>
+  <style>
+    :root {
+      --main-color: #1a1a1a;
+      --accent-color: #007acc;
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --section-gap: 4rem;
+      --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-stack);
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--main-color);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: var(--section-gap);
+    }
+
+    h2 {
+      color: var(--main-color);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      background: #f0f0f0;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Seyed Mohammadreza Mousavi</h1>
-      <p>Researcher in Computer Vision & Artificial Intelligence</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <h1>Seyed Mohammadreza Mousavi</h1>
+    <p>Researcher in Computer Vision & AI</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        I am a researcher passionate about computer vision, deep learning, and AI applications in imaging. My work focuses on understanding visual data through intelligent algorithms and applied machine learning.
-      </p>
+      <p>I am a researcher passionate about computer vision, deep learning, and AI applications in imaging. My work focuses on understanding visual data through intelligent algorithms and applied machine learning.</p>
     </section>
 
     <section id="research">
@@ -44,9 +125,8 @@
       <h2>Publications</h2>
       <p>View full list on <a href="https://scholar.google.com" target="_blank">Google Scholar</a>.</p>
       <ul>
-        <li><strong>Paper Title One</strong> - Conference Name, Year</li>
-        <li><strong>Paper Title Two</strong> - Journal Name, Year</li>
-        <!-- Add more here -->
+        <li><strong>Paper Title One</strong> – Conference Name, Year</li>
+        <li><strong>Paper Title Two</strong> – Journal Name, Year</li>
       </ul>
     </section>
 
@@ -64,9 +144,7 @@
   </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Seyed Mohammadreza Mousavi</p>
-    </div>
+    <p>&copy; 2025 Seyed Mohammadreza Mousavi</p>
   </footer>
 </body>
 </html>
