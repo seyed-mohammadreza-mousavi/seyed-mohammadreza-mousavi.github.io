@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seyed Mohammadreza Mousavi</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="canonical" href="index.html">
+  <meta name="description" content="Researcher in Computer Vision, SLAM, and Deep Learning. University lecturer and AI engineer focusing on perception and calibration systems.">
+  <meta property="og:title" content="Seyed Mohammadreza Mousavi">
+  <meta property="og:description" content="Researcher in Computer Vision, SLAM, and Deep Learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     html { scroll-behavior: smooth; }
     :root {
@@ -149,12 +158,44 @@ p {
     .certificate-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
     .certificate-images img { border: 1px solid var(--card-border); border-radius: 10px; }
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    /* Utilities */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 1rem; }
+    .responsive-img { max-width: 100%; height: auto; border: 1px solid var(--card-border); border-radius: 10px; }
+    .award-frame { width: 100%; height: 500px; border: none; }
+    .education-details { text-align: left; max-width: 800px; }
+
+    /* Accessibility focus */
+    a:focus-visible, button:focus-visible { outline: 3px solid #66ccff; outline-offset: 2px; border-radius: 6px; }
+
+    /* Progress bar + Back to top */
+    #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--link-color); z-index: 100; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+    #backToTop { position: fixed; right: 20px; bottom: 24px; background: var(--link-color); color: #fff; border: none; border-radius: 9999px; width: 44px; height: 44px; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; }
+    #backToTop.show { opacity: 1; visibility: visible; }
+
     @media (max-width: 1000px) { .certificate-block, .split { grid-template-columns: 1fr; } }
     @media (max-width: 900px) {
       main { display: block; }
       .sidebar { position: static; margin-bottom: 1.5rem; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Seyed Mohammadreza Mousavi",
+    "image": "assets/profile.jpg",
+    "jobTitle": "University Lecturer",
+    "affiliation": "Sadjad Industrial University of Mashhad",
+    "email": "mailto:mohammadreza92299@gmail.com",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=jtZ1GlUAAAAJ&hl=en",
+      "https://github.com/seyed-mohammadreza-mousavi",
+      "https://www.linkedin.com/in/seyed-mohammadreza-mousavi/",
+      "https://twitter.com/SMousaviReza"
+    ]
+  }
+  </script>
 </head>
 <script>
   function toggleTheme() {
@@ -163,7 +204,10 @@ p {
   }
 
   window.onload = function () {
-    if (localStorage.getItem('theme') === 'dark') {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.body.classList.add('dark-mode');
     }
   }
@@ -195,12 +239,28 @@ p {
         link.classList.add('active');
       }));
     }
+
+    // Reading progress + back-to-top
+    const progressBar = document.getElementById('progress-bar');
+    const backToTop = document.getElementById('backToTop');
+    const onScroll = () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = scrolled + '%';
+      if (backToTop) backToTop.classList.toggle('show', scrollTop > 600);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   });
 </script>
 <body>
+  <a href="#home" class="visually-hidden-focusable" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+  <div id="progress-bar" aria-hidden="true"></div>
   <header>
     <h1>Seyed Mohammadreza Mousavi</h1>
-    <nav>
+    <nav aria-label="Primary">
       <ul>
         <li><a href="#home" data-section="home" class="active">Home</a></li>
         <li><a href="#research" data-section="research">Research Highlights</a></li>
@@ -271,7 +331,7 @@ p {
       </section>
       <section class="card">
         <h2>Education</h2>
-        <div style="text-align: left; max-width: 800px;">
+        <div class="education-details">
           <p><strong>Sadjad University of Technology</strong>, Mashhad, Iran  
           <br>M.Sc. in Artificial Intelligence, 2017–2020  
           <br><em>Supervisor:</em> Dr. Amir Bavafa Toosi  
@@ -293,8 +353,8 @@ p {
       <div class="highlight">
         <h3>Lithium Battery State of Health Estimation: A Novel Octave and LSTM Hybrid Neural Network Approach</h3>
         <p><strong>Abstract:</strong> The lithium battery (LIB) has emerged as a prominent area of research in energy and industrial applications, due to its superior energy density and efficient energy delivery capabilities. This study addresses the critical requirement for accurate State of Health (SOH) estimation as a significant challenge. The primary objective of this study is to utilize key battery health characteristic parameters to improve the accuracy and computational speed of SOH. Significant gaps have been identified in recent methodologies, particularly in terms of SOH estimation accuracy, computational speed, and simulation parameters. To address these limitations, a novel hybrid neural network (NN) approach is proposed, integrating octave convolution (OCT) and long short-term memory (LSTM). To demonstrate the effectiveness of the proposed method in the optimization process, a comparative analysis is conducted against Convolutional Neural Networks (CNN), OCT, LSTM, and CNN-LSTM architectures. The results indicate a significant reduction in the mean squared error (MSE), decreasing from 80.21 percent in CNN to 0.0758 percent in the proposed OCT-LSTM model. Furthermore, the root mean square error (RMSE) exhibits a substantial reduction of 64.91 percent and 58.14 percent compared to the LSTM and CNN-LSTM models, respectively. The simulation parameters used in this study were reduced from 41,228 for the CNN-LSTM model to 38,668 for the OCT-LSTM model. Empirical results show that the proposed method outperforms state-of-the-art methods in the number of parameters, MSE, RMSE, and estimation accuracy. These findings highlight the method's enhanced efficiency, computational speed, and precision, emphasizing its potential as a significant advancement in this domain.</p>
-        <div style="text-align: center; margin: 1rem 0;">
-          <img src="assets/graphical-abstract.png" alt="Graphical Abstract for Battery SOH Paper" style="max-width: 100%; border: 1px solid #ccc; border-radius: 5px;"/>
+        <div class="text-center mt-1">
+          <img src="assets/graphical-abstract.png" alt="Graphical abstract of OCT-LSTM method for battery SOH" class="responsive-img" loading="lazy" decoding="async"/>
           <p style="font-style: italic; color: var(--footer-color); font-size: 0.9rem;">Graphical abstract of the proposed OCT-LSTM method</p>
         </div>
         <a href="assets/battery-soh-paper.pdf" target="_blank">📄 Full Paper (PDF)</a>
@@ -342,7 +402,7 @@ p {
         <li>🎖️ Recognized for outstanding contribution to <strong>Camera Calibration and SLAM Software Systems</strong> at Software Motion (2024)</li>
       </ul>
       <section class="split">
-        <div style="flex: 1; min-width: 300px;">
+        <div>
           <h3>🏅 Top Lecturer Award – Computer Science Department</h3>
           <p><strong>Institution:</strong> Sadjad Industrial University</p>
           <p><strong>Date:</strong> March 2025</p>
@@ -352,30 +412,31 @@ p {
             academic excellence in <em>AI, machine learning, and computer vision</em>.
           </p>
         </div>
-        <div style="flex: 1; min-width: 300px;">
-          <iframe src="assets/award-certificate.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
+        <div>
+          <iframe src="assets/award-certificate.pdf" class="award-frame" title="Top Lecturer Award certificate"></iframe>
         </div>
       </section>
       </section>
 
       <section id="certificates" class="card">
       <h2>Certificates</h2>
-      <div class="certificate-block" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem;">
-        <div class="certificate-text" style="flex: 1 1 45%;">
+      <div class="certificate-block">
+        <div class="certificate-text">
           <h3>IEEE Certificate – 12th Iranian Conference on Renewable Energies and Distributed Generation</h3>
           <p>
             Presented at the 12th Iranian Conference on Renewable Energies and Distributed Generation at Qom University of Technology (Feb 2025), our paper on <em>Lithium Battery SOH Estimation using a Hybrid Octave and LSTM Network</em> was officially accepted. The presentation was honored with an IEEE-recognized certificate. The event was a great platform to share insights on battery health estimation and deep learning-based energy applications.
           </p>
         </div>
-        <div class="certificate-images" style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 1rem;">
-          <img src="assets/ieee-cert.png" alt="IEEE Conference Certificate" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
-          <img src="assets/presentation-1.jpg" alt="Presentation Photo 1" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
-          <img src="assets/presentation-2.jpg" alt="Presentation Photo 2" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+        <div class="certificate-images">
+          <img src="assets/ieee-cert.png" alt="IEEE Conference Certificate" loading="lazy" decoding="async">
+          <img src="assets/presentation-1.jpg" alt="Conference presentation – photo 1" loading="lazy" decoding="async">
+          <img src="assets/presentation-2.jpg" alt="Conference presentation – photo 2" loading="lazy" decoding="async">
         </div>
       </div>
       </section>
     </div>
   </main>
+  <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
   <footer>
     <p>&copy; 2025 Seyed Mohammadreza Mousavi</p>
   </footer>
