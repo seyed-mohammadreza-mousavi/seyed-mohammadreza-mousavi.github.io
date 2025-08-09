@@ -28,6 +28,7 @@
       --card-bg: #ffffff;
       --card-border: #e6e6e6;
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+      --header-height: 80px;
     }
     body.dark-mode {
       --bg-color: #121212;
@@ -124,7 +125,7 @@
       color: var(--link-color);
       text-decoration: none;
     }
-    .sidebar { position: sticky; top: 1rem; align-self: start; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); max-height: calc(100vh - 2rem); overflow: auto; }
+    .sidebar { position: sticky; top: calc(var(--header-height) + 16px); align-self: start; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); height: calc(100vh - var(--header-height) - 2rem); overflow: auto; z-index: 5; }
     .sidebar .social-links a { display: block; margin: 0.35rem 0; }
     .content { text-align: left; }
     footer {
@@ -214,6 +215,12 @@ p {
       document.body.classList.add('dark-mode');
     } else if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.body.classList.add('dark-mode');
+    }
+    // Measure header height and store in CSS variable for sticky sidebar offset
+    const headerEl = document.querySelector('header');
+    if (headerEl) {
+      const h = headerEl.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--header-height', h + 'px');
     }
   }
 
