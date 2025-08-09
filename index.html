@@ -124,7 +124,7 @@
       color: var(--link-color);
       text-decoration: none;
     }
-    .sidebar { position: static; align-self: start; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); }
+    .sidebar { position: sticky; top: 1rem; align-self: start; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); max-height: calc(100vh - 2rem); overflow: auto; }
     .sidebar .social-links a { display: block; margin: 0.35rem 0; }
     .content { text-align: left; }
     footer {
