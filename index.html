@@ -79,9 +79,12 @@
     }
     main {
       padding: 2rem;
-      text-align: center;
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      align-items: start;
     }
     section {
       margin-bottom: 2rem;
@@ -91,6 +94,9 @@
       color: var(--link-color);
       text-decoration: none;
     }
+    .sidebar { position: sticky; top: 1rem; align-self: start; text-align: center; }
+    .sidebar .social-links a { display: block; margin: 0.3rem 0; }
+    .content { text-align: left; }
     footer {
       background-color: var(--footer-bg);
       text-align: center;
@@ -123,6 +129,10 @@ p {
     body.dark-mode .highlight { background: #1e1e1e; }
     .pub { margin-bottom: 2rem; }
     .pub h3 { margin-bottom: 0.3rem; }
+    @media (max-width: 900px) {
+      main { display: block; }
+      .sidebar { position: static; margin-bottom: 1.5rem; }
+    }
   </style>
 </head>
 <script>
@@ -184,79 +194,78 @@ p {
     </div>
   </header>
   <main>
-    <section id="home">
+    <aside class="sidebar">
       <img src="assets/profile.jpg" alt="Profile picture" class="profile-img">
-      <section>
-  <h2>Biography</h2>
-  <p>
-    Hi! My name is <strong>Seyed Mohammadreza Mousavi</strong>, and I am a 
-    <strong>University Lecturer at Sadjad Industrial University of Mashhad</strong>, 
-    where I teach courses on <em>Python programming</em>, <em>IoT systems</em>, and 
-    <em>foundations of computer engineering</em>.
-  </p>
-  <p>
-    Alongside my academic work, I am currently part of the 
-    <strong>Camera Calibration Team at Software Motion</strong>, where I focus on 
-    <em>SLAM-based calibration</em>, <em>ROS integration</em>, and 
-    <em>fisheye surround-view camera systems</em>.
-  </p>
-  <p>
-    Before this, I was a member of the <strong>Perception Team at Software Motion</strong>, 
-    where I led and contributed to projects involving <em>real-time object detection</em>, 
-    <em>deep learning-based tracking</em>, and <em>multi-camera integration</em>. My work has 
-    spanned from academic research to hands-on development of intelligent visual perception 
-    systems used in industrial and robotics applications.
-  </p>
-  <p>
-    My research interests include <em>computer vision</em>, <em>deep learning</em>, 
-    <em>SLAM</em>, and <em>3D scene understanding</em>. I enjoy designing systems that combine 
-    robust geometry with modern learning techniques, and I’m especially passionate about turning 
-    complex AI pipelines into intuitive and interpretable tools. Outside of work, you can find me 
-    exploring visual technology, teaching students, or geeking out about the latest in perception 
-    and robotics.
-  </p>
-      </section>
-      <section>
-  <h2>Research Interests</h2>
-  <ul>
-    <li><strong>Computer Vision</strong>: Image processing, object detection, object classification, segmentation</li>
-    <li><strong>Machine Learning & Deep Learning</strong>: Representation learning, CNNs, RNNs, Transformer-based models</li>
-    <li><strong>Reinforcement Learning</strong>: Applied to robotics and control tasks</li>
-    <li><strong>Natural Language Processing</strong>: Sequence modeling, text understanding</li>
-    <li><strong>Robotics & Navigation</strong>: SLAM, sensor fusion, perception in autonomous systems</li>
-  </ul>
-      </section>
-      <section>
-  <h2>Education</h2>
-  <div style="text-align: left; max-width: 800px; margin: auto;">
-    <p><strong>Sadjad University of Technology</strong>, Mashhad, Iran  
-    <br>M.Sc. in Artificial Intelligence, 2017–2020  
-    <br><em>Supervisor:</em> Dr. Amir Bavafa Toosi  
-    <br><em>Thesis:</em> Development of English handwritten recognition using Deep Neural Network  
-    <br><em>Thesis Grade:</em> 18.5/20; Ranked second in top 5% of class</p>
-    
-    <br>
-
-    <p><strong>Islamic Azad University of Mashhad</strong>, Mashhad, Iran  
-    <br>B.Sc. in Computer Engineering – Hardware, 2012–2016  
-    <br><em>Supervisor:</em> Dr. Farzaneh Kimiaei  
-    <br><em>Thesis:</em> Developing AVR programming for automation  
-    <br><em>Thesis Grade:</em> 20/20; Ranked first in class</p>
-  </div>
-      </section>
-      <section>
-      <h2>Connect</h2>
+      <h3>Connect</h3>
       <div class="social-links">
         <a href="mailto:mohammadreza92299@gmail.com">📧 Email</a>
-		<a href="https://scholar.google.com/citations?user=jtZ1GlUAAAAJ&hl=en">📧 Google Scholar</a>
+        <a href="https://scholar.google.com/citations?user=jtZ1GlUAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
         <a href="https://github.com/seyed-mohammadreza-mousavi" target="_blank">💻 GitHub</a>
         <a href="https://www.linkedin.com/in/seyed-mohammadreza-mousavi/" target="_blank">🔗 LinkedIn</a>
         <a href="https://twitter.com/SMousaviReza" target="_blank">🐦 Twitter</a>
       </div>
+    </aside>
+    <div class="content">
+      <section id="home">
+        <h2>Biography</h2>
+        <p>
+          Hi! My name is <strong>Seyed Mohammadreza Mousavi</strong>, and I am a 
+          <strong>University Lecturer at Sadjad Industrial University of Mashhad</strong>, 
+          where I teach courses on <em>Python programming</em>, <em>IoT systems</em>, and 
+          <em>foundations of computer engineering</em>.
+        </p>
+        <p>
+          Alongside my academic work, I am currently part of the 
+          <strong>Camera Calibration Team at Software Motion</strong>, where I focus on 
+          <em>SLAM-based calibration</em>, <em>ROS integration</em>, and 
+          <em>fisheye surround-view camera systems</em>.
+        </p>
+        <p>
+          Before this, I was a member of the <strong>Perception Team at Software Motion</strong>, 
+          where I led and contributed to projects involving <em>real-time object detection</em>, 
+          <em>deep learning-based tracking</em>, and <em>multi-camera integration</em>. My work has 
+          spanned from academic research to hands-on development of intelligent visual perception 
+          systems used in industrial and robotics applications.
+        </p>
+        <p>
+          My research interests include <em>computer vision</em>, <em>deep learning</em>, 
+          <em>SLAM</em>, and <em>3D scene understanding</em>. I enjoy designing systems that combine 
+          robust geometry with modern learning techniques, and I’m especially passionate about turning 
+          complex AI pipelines into intuitive and interpretable tools. Outside of work, you can find me 
+          exploring visual technology, teaching students, or geeking out about the latest in perception 
+          and robotics.
+        </p>
       </section>
-    </section>
+      <section>
+        <h2>Research Interests</h2>
+        <ul>
+          <li><strong>Computer Vision</strong>: Image processing, object detection, object classification, segmentation</li>
+          <li><strong>Machine Learning & Deep Learning</strong>: Representation learning, CNNs, RNNs, Transformer-based models</li>
+          <li><strong>Reinforcement Learning</strong>: Applied to robotics and control tasks</li>
+          <li><strong>Natural Language Processing</strong>: Sequence modeling, text understanding</li>
+          <li><strong>Robotics & Navigation</strong>: SLAM, sensor fusion, perception in autonomous systems</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <div style="text-align: left; max-width: 800px;">
+          <p><strong>Sadjad University of Technology</strong>, Mashhad, Iran  
+          <br>M.Sc. in Artificial Intelligence, 2017–2020  
+          <br><em>Supervisor:</em> Dr. Amir Bavafa Toosi  
+          <br><em>Thesis:</em> Development of English handwritten recognition using Deep Neural Network  
+          <br><em>Thesis Grade:</em> 18.5/20; Ranked second in top 5% of class</p>
+          
+          <br>
 
-    <section id="research">
+          <p><strong>Islamic Azad University of Mashhad</strong>, Mashhad, Iran  
+          <br>B.Sc. in Computer Engineering – Hardware, 2012–2016  
+          <br><em>Supervisor:</em> Dr. Farzaneh Kimiaei  
+          <br><em>Thesis:</em> Developing AVR programming for automation  
+          <br><em>Thesis Grade:</em> 20/20; Ranked first in class</p>
+        </div>
+      </section>
+
+      <section id="research">
       <h2>Research Highlights</h2>
       <div class="highlight">
         <h3>Lithium Battery State of Health Estimation: A Novel Octave and LSTM Hybrid Neural Network Approach</h3>
@@ -267,9 +276,9 @@ p {
         </div>
         <a href="assets/battery-soh-paper.pdf" target="_blank">📄 Full Paper (PDF)</a>
       </div>
-    </section>
+      </section>
 
-    <section id="publications">
+      <section id="publications">
       <h2>Publications</h2>
       <div class="pub">
         <h3>GCOCR: A Method for Recognition of Characters Using Gated Convolutional and Recurrent Networks</h3>
@@ -299,9 +308,9 @@ p {
         💼 <a href="https://www.linkedin.com/in/seyed-mohammadreza-mousavi/" target="_blank">LinkedIn</a><br>
         💻 <a href="https://github.com/seyed-mohammadreza-mousavi" target="_blank">GitHub</a>
       </p>
-    </section>
+      </section>
 
-    <section id="honors">
+      <section id="honors">
       <h2>Honors & Awards</h2>
       <ul>
         <li>🥇 <strong>Ranked First</strong> in B.Sc. class, Islamic Azad University of Mashhad (2016)</li>
@@ -324,9 +333,9 @@ p {
           <iframe src="assets/award-certificate.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
         </div>
       </section>
-    </section>
+      </section>
 
-    <section id="certificates">
+      <section id="certificates">
       <h2>Certificates</h2>
       <div class="certificate-block" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem;">
         <div class="certificate-text" style="flex: 1 1 45%;">
@@ -341,7 +350,8 @@ p {
           <img src="assets/presentation-2.jpg" alt="Presentation Photo 2" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   </main>
   <footer>
     <p>&copy; 2025 Seyed Mohammadreza Mousavi</p>
