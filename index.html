@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seyed Mohammadreza Mousavi</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
     :root {
@@ -15,6 +16,9 @@
       --nav-link-color: #ffffff;
       --footer-bg: #f0f0f0;
       --footer-color: #555;
+      --card-bg: #ffffff;
+      --card-border: #e6e6e6;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
     }
     body.dark-mode {
       --bg-color: #121212;
@@ -24,51 +28,64 @@
       --nav-link-color: #ffffff;
       --footer-bg: #1a1a1a;
       --footer-color: #999;
+      --card-bg: #171717;
+      --card-border: #2a2a2a;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
     }
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       margin: 0;
       padding: 0;
       transition: background 0.3s, color 0.3s;
     }
     header {
       background-color: var(--header-bg);
-      padding: 1.5rem;
+      padding: 1rem 1.5rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     header h1 {
       color: white;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+      letter-spacing: 0.3px;
     }
     nav ul {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 0.5rem;
       list-style: none;
       padding: 0;
-      margin: 1rem 0 0 0;
+      margin: 0.5rem 0 0 0;
     }
     nav ul li a {
       color: var(--nav-link-color);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      border-radius: 9999px;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
     nav ul li a:hover {
-      text-decoration: underline;
+      background-color: rgba(255,255,255,0.15);
     }
     .toggle-btn {
-      margin-top: 1rem;
+      margin-top: 0.6rem;
     }
     .toggle-btn button {
-      padding: 0.4rem 1rem;
-      border: 1px solid var(--text-color);
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-weight: bold;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.6);
+      background-color: transparent;
+      color: #fff;
+      font-weight: 600;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 8px;
+      backdrop-filter: saturate(120%);
     }
     .profile-img {
       width: 160px;
@@ -76,6 +93,8 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
+      border: 3px solid var(--link-color);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
     main {
       padding: 2rem;
@@ -88,14 +107,15 @@
     }
     section {
       margin-bottom: 2rem;
+      scroll-margin-top: 100px;
     }
     .social-links a {
       margin: 0 0.5rem;
       color: var(--link-color);
       text-decoration: none;
     }
-    .sidebar { position: sticky; top: 1rem; align-self: start; text-align: center; }
-    .sidebar .social-links a { display: block; margin: 0.3rem 0; }
+    .sidebar { position: sticky; top: 1rem; align-self: start; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); }
+    .sidebar .social-links a { display: block; margin: 0.35rem 0; }
     .content { text-align: left; }
     footer {
       background-color: var(--footer-bg);
@@ -120,15 +140,16 @@ p {
     line-height: 1.6;
   }
     /* Single-page section styles */
-    .highlight {
-      border-left: 4px solid var(--link-color);
-      padding: 1rem;
-      margin-bottom: 2rem;
-      background: #f8f8f8;
-    }
-    body.dark-mode .highlight { background: #1e1e1e; }
-    .pub { margin-bottom: 2rem; }
-    .pub h3 { margin-bottom: 0.3rem; }
+    .content > section { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); }
+    .highlight { border-left: 4px solid var(--link-color); padding-left: 1rem; }
+    .pub { margin-bottom: 1rem; }
+    .pub h3 { margin-bottom: 0.35rem; }
+    .content h2 { font-family: 'Merriweather', Georgia, 'Times New Roman', serif; margin-top: 0; margin-bottom: 0.75rem; letter-spacing: 0.2px; }
+    .content h2::after { content: ''; display: block; width: 56px; height: 3px; background: var(--link-color); margin-top: 0.4rem; border-radius: 2px; }
+    .certificate-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .certificate-images img { border: 1px solid var(--card-border); border-radius: 10px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    @media (max-width: 1000px) { .certificate-block, .split { grid-template-columns: 1fr; } }
     @media (max-width: 900px) {
       main { display: block; }
       .sidebar { position: static; margin-bottom: 1.5rem; }
@@ -204,9 +225,11 @@ p {
         <a href="https://www.linkedin.com/in/seyed-mohammadreza-mousavi/" target="_blank">🔗 LinkedIn</a>
         <a href="https://twitter.com/SMousaviReza" target="_blank">🐦 Twitter</a>
       </div>
+      <hr style="border:none; border-top:1px solid var(--card-border); margin: 1rem 0;">
+      <a href="assets/cv.pdf" download style="display:inline-block; font-weight:600; color:#fff; background: var(--link-color); padding: 0.5rem 0.9rem; border-radius:8px; text-decoration:none;">⬇️ Download CV</a>
     </aside>
     <div class="content">
-      <section id="home">
+      <section id="home" class="card">
         <h2>Biography</h2>
         <p>
           Hi! My name is <strong>Seyed Mohammadreza Mousavi</strong>, and I am a 
@@ -236,7 +259,7 @@ p {
           and robotics.
         </p>
       </section>
-      <section>
+      <section class="card">
         <h2>Research Interests</h2>
         <ul>
           <li><strong>Computer Vision</strong>: Image processing, object detection, object classification, segmentation</li>
@@ -246,7 +269,7 @@ p {
           <li><strong>Robotics & Navigation</strong>: SLAM, sensor fusion, perception in autonomous systems</li>
         </ul>
       </section>
-      <section>
+      <section class="card">
         <h2>Education</h2>
         <div style="text-align: left; max-width: 800px;">
           <p><strong>Sadjad University of Technology</strong>, Mashhad, Iran  
@@ -265,7 +288,7 @@ p {
         </div>
       </section>
 
-      <section id="research">
+      <section id="research" class="card">
       <h2>Research Highlights</h2>
       <div class="highlight">
         <h3>Lithium Battery State of Health Estimation: A Novel Octave and LSTM Hybrid Neural Network Approach</h3>
@@ -278,7 +301,7 @@ p {
       </div>
       </section>
 
-      <section id="publications">
+      <section id="publications" class="card">
       <h2>Publications</h2>
       <div class="pub">
         <h3>GCOCR: A Method for Recognition of Characters Using Gated Convolutional and Recurrent Networks</h3>
@@ -310,15 +333,15 @@ p {
       </p>
       </section>
 
-      <section id="honors">
+      <section id="honors" class="card">
       <h2>Honors & Awards</h2>
       <ul>
         <li>🥇 <strong>Ranked First</strong> in B.Sc. class, Islamic Azad University of Mashhad (2016)</li>
-        <li>🏅 <strong>Ranked Second</strong> among top 2% of M.Sc. class, Sadjad University of Technology (2020)</li>
+          <li>🏅 <strong>Ranked Second</strong> among top 2% of M.Sc. class, Sadjad University of Technology (2020)</li>
         <li>📘 M.Sc. Thesis scored <strong>18.5/20</strong> – English Handwritten Recognition using Deep Neural Networks</li>
         <li>🎖️ Recognized for outstanding contribution to <strong>Camera Calibration and SLAM Software Systems</strong> at Software Motion (2024)</li>
       </ul>
-      <section style="display: flex; flex-wrap: wrap; margin-top: 3rem; gap: 2rem;">
+      <section class="split">
         <div style="flex: 1; min-width: 300px;">
           <h3>🏅 Top Lecturer Award – Computer Science Department</h3>
           <p><strong>Institution:</strong> Sadjad Industrial University</p>
@@ -335,7 +358,7 @@ p {
       </section>
       </section>
 
-      <section id="certificates">
+      <section id="certificates" class="card">
       <h2>Certificates</h2>
       <div class="certificate-block" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem;">
         <div class="certificate-text" style="flex: 1 1 45%;">
